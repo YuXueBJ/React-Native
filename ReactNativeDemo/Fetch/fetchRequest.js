@@ -28,30 +28,30 @@ import React, {
 
 
 
-let url = 'https://crm-staging.xiaoshouyi.com/mobile/smart-view/smart-views.action';
+// let url = 'https://crm-staging.xiaoshouyi.com/mobile/smart-view/smart-views.action';
 
-fetch(url, {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/x-www-form-urlencoded"
+// fetch(url, {
+//   method: "POST",
+//   headers: {
+//     "Content-Type": "application/x-www-form-urlencoded"
     
-  },
-  body: "_vs=4.0&appType=0&appVersion=4.0&belongId=100003628&inhouse=0&os=iPhone%20OS%2C8.1%2CiPhone%20Simulator&source=2"
-  //是否支持Cookie
-  credentials: 'include',
+//   },
+//   body: "_vs=4.0&appType=0&appVersion=4.0&belongId=100003628&inhouse=0&os=iPhone%20OS%2C8.1%2CiPhone%20Simulator&source=2"
+//   //是否支持Cookie
+//   credentials: 'include',
 //   setCookie("username");
 
-}).then(function(response) {
+// }).then(function(response) {
     
-     console.log(response.headers.get('Content-Type')); 
-    console.log(response.headers.get('Date'));
+//      console.log(response.headers.get('Content-Type')); 
+//     console.log(response.headers.get('Date'));
 
-    response.json().then(function(data) {
-       console.log(data);
-    });
-}, function(e) {
-   alert("Error submitting form!");
-});
+//     response.json().then(function(data) {
+//        console.log(data);
+//     });
+// }, function(e) {
+//    alert("Error submitting form!");
+// });
 
 
 

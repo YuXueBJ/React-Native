@@ -15,5 +15,5 @@ import React, { AppRegistry } from 'react-native';
 // import ReduxCustomCell from './ReduxCustomCell/containers/app';
 // AppRegistry.registerComponent('ReactNativeDemo', () => ReduxTodoList);
 
-import Fetch from './Fetch';
+import Fetch from './XSYRequest';
 AppRegistry.registerComponent('ReactNativeDemo', () => Fetch);

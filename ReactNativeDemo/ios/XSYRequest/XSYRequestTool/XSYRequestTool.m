@@ -8,35 +8,44 @@
 
 #import "XSYRequestTool.h"
 
+static NSString * XSY_Host    = @"https://crm-staging.xiaoshouyi.com";
+static NSString * XSY_HostKey =  @"hostKey";
+
+static NSString * userTokenValue = @"tadicL/7tNAwEBL5XWfL8lfqOM3R6hohe9B+NlT5z2g=";
+
+
 @implementation XSYRequestTool
 
 +(AFHTTPRequestOperationManager * ) get:(NSString *) url param:(NSDictionary *) param success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure{
   
-  [[NSUserDefaults standardUserDefaults] setValue:@"https://crm.xiaoshouyi.com" forKey:@"hostKey"];
+  [[NSUserDefaults standardUserDefaults] setValue:XSY_Host forKey:XSY_HostKey];
   
   AFHTTPRequestOperationManager * manager =  [self requestManager];
   
   NSMutableDictionary * parameters = [self requestPrePrarms];
-  if (param.count > 0) {
-    [parameters setValuesForKeysWithDictionary:param];
+  if (param) {
+    if (param.count > 0) {
+      [parameters setValuesForKeysWithDictionary:param];
+    }
   }
   NSMutableURLRequest * requestUrl = [[AFHTTPRequestSerializer serializer] requestWithMethod:@"GET" URLString:[self commonUrl:url] parameters:parameters error:nil];
   NSLog(@"%@",requestUrl.URL);
   [manager GET:[self commonUrl:url] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSLog(@"%@",responseObject);
     if (success) {
       success(responseObject);
     }
-
   }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    NSLog(@"%@",error);
     if (failure) {
-      failure(error);
+       failure(error);
     }
   }];
   return manager;
 }
 +(AFHTTPRequestOperationManager * ) post:(NSString *) url param:(NSDictionary *) param success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure
 {
-  [[NSUserDefaults standardUserDefaults] setValue:@"https://crm.xiaoshouyi.com" forKey:@"hostKey"];
+  [[NSUserDefaults standardUserDefaults] setValue:XSY_Host forKey:XSY_HostKey];
   
   AFHTTPRequestOperationManager * manager =  [self requestManager];
   
@@ -49,10 +58,12 @@
   NSLog(@"%@",requestUrl.URL);
   
   [manager POST:[self commonUrl:url] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSLog(@"%@",responseObject);
     if (success) {
       success(responseObject);
     }
   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    NSLog(@"%@",error);
     if (failure) {
       failure(error);
     }
@@ -76,14 +87,14 @@
 +(NSMutableArray *) cookieArr{
   
   NSMutableDictionary * properties = [[NSMutableDictionary alloc]init];
-  NSString * tokenStr = @"rixbIupkMgg0rAibXQo9JFQ9tzcSy58p";
+  NSString * tokenStr = userTokenValue;
   NSString * token = [NSString stringWithFormat:@"\"%@\"",tokenStr];
   NSMutableArray * cookieArr;
   if (tokenStr &&  tokenStr.length) {
     [properties setValue:token forKey:NSHTTPCookieValue];
     [properties setValue:@"x-ienterprise-passport" forKey:NSHTTPCookieName];
     [properties setValue:@"/" forKey:NSHTTPCookiePath];
-    NSString * cacheHost =  [[NSUserDefaults standardUserDefaults] objectForKey:@"hostKey"];
+    NSString * cacheHost =  [[NSUserDefaults standardUserDefaults] objectForKey:XSY_HostKey];
     NSString * tryHost =  [[NSUserDefaults standardUserDefaults] stringForKey:@"try_hostKey"];
     if (tryHost && tryHost.length) {
       cacheHost = tryHost;
@@ -113,7 +124,7 @@
   if (!url) {
     return nil;
   }
-  NSString * cacheHost =  [[NSUserDefaults standardUserDefaults] objectForKey:@"hostKey"];
+  NSString * cacheHost =  [[NSUserDefaults standardUserDefaults] objectForKey:XSY_HostKey];
   NSString * tryHost =  [[NSUserDefaults standardUserDefaults] stringForKey:@"try_hostKey"];
   if (tryHost.length) {
     cacheHost = tryHost;
