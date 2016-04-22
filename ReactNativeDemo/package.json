@@ -1,0 +1,23 @@
+{
+  "name": "ReactNativeDemo",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start"
+  },
+  "dependencies": {
+    "react-native": "^0.21.0",
+    "react-native-button": "^1.4.2",
+    "react-native-navbar": "^1.4.2",
+    "react-native-redux-router": "^1.0.6",
+    "react-native-router-redux": "^0.2.2",
+    "react-native-sk-refreshable-listview": "^1.0.0",
+    "react-native-tab-navigator": "^0.2.18",
+    "react-redux": "^4.4.2",
+    "redux": "^3.4.0",
+    "redux-thunk": "^2.0.1"
+  },
+  "devDependencies": {
+    "eslint-plugin-react": "^4.2.3"
+  }
+}
