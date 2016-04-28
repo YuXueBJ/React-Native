@@ -1,0 +1,19 @@
+{
+  "name": "Exercise",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start"
+  },
+  "dependencies": {
+    "react": "^0.14.8",
+    "react-native": "^0.24.1",
+    "react-redux": "^4.4.5",
+    "react-thunk": "^1.0.0",
+    "redux": "^3.5.2",
+    "redux-thunk": "^2.0.1"
+  },
+  "devDependencies": {
+    "redux-devtools": "^3.2.0"
+  }
+}

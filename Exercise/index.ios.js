@@ -4,15 +4,15 @@
  * @flow
  */
 
-// import React, {
-//   AppRegistry,
-//   Component,
-//   StyleSheet,
-//   Text,
-//   View
-// } from 'react-native';
+import React, {
+  AppRegistry,
+  Component,
+  StyleSheet,
+  Text,
+  View
+} from 'react-native';
 
-// class YuxueTool extends Component {
+// class Exercise extends Component {
 //   render() {
 //     return (
 //       <View style={styles.container}>
@@ -50,9 +50,6 @@
 //   },
 // });
 
-// AppRegistry.registerComponent('YuxueTool', () => YuxueTool);
+import ReduxTodoList from './app/components/RefreshListView';
 
-import { AppRegistry } from 'react-native';
-import App from './example';
-
-AppRegistry.registerComponent('YuxueTool', () => App);
+AppRegistry.registerComponent('Exercise', () => ReduxTodoList);
