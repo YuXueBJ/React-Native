@@ -18,9 +18,6 @@ import  ListRowView from './listRow';
 import  ListEmptyView from './listEmptyView';
 import  ListError from './listError'
 
-//test
-import * as TestData from '../reducers/insetDataSource';
-
 var listView = React.createClass({
   //List Cell View
   renderRow(row) {
@@ -31,6 +28,7 @@ var listView = React.createClass({
   //来源数据
   render(){
     const {data,
+           isLoadMore,
            customRow,
            error,
            customEmpty,
@@ -41,14 +39,14 @@ var listView = React.createClass({
     if(error){
       return (
          <ListError refresh={refreshAction} />
-      )
-    }
+      )}
+      
     //加载为空页面
      if(data == undefined||data.length==0){
       return (
              <ListEmptyView refresh={refreshAction} />
-            )
-    }
+     )}
+     
     //数据属性格式
    let ListViewDataSource = new ListView.DataSource({
        rowHasChanged: (r1, r2) => r1 !== r2
@@ -65,9 +63,9 @@ var listView = React.createClass({
       <RefreshableListView
         style={styles.container}
         dataSource={ListViewDataSource.cloneWithRows(data)}
-        onRefresh={refreshAction} // callback to refresh data (load first page of data), which should return a Promise, I use this promise to tell when to stop loading (render loading view).
-        onLoadMore={loadMoreAction} // callback to load more data (load next page of data), which should return a Promise, I use this promise to tell when to stop loading (render loading view)
-        showLoadMore={true}
+        onRefresh={refreshAction}
+        onLoadMore={loadMoreAction}
+        showLoadMore={isLoadMore}
         renderRow={showCellView}  
       />
     );

@@ -9,6 +9,7 @@ import React, {
 } from 'react-native';
 
 
+const cookie = "";
 
 // let url = 'http://op.juhe.cn/onebox/weather/query';
 
@@ -34,7 +35,6 @@ import React, {
 //   method: "POST",
 //   headers: {
 //     "Content-Type": "application/x-www-form-urlencoded"
-    
 //   },
 //   body: "_vs=4.0&appType=0&appVersion=4.0&belongId=100003628&inhouse=0&os=iPhone%20OS%2C8.1%2CiPhone%20Simulator&source=2"
 //   //是否支持Cookie

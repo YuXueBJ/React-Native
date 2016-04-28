@@ -8,7 +8,28 @@
 
 #import <Foundation/Foundation.h>
 #import "AFNetworking.h"
+
 @interface XSYRequestTool : NSObject
-+(AFHTTPRequestOperationManager * ) get:(NSString *) url param:(NSDictionary *) param success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
-+(AFHTTPRequestOperationManager * ) post:(NSString *) url param:(NSDictionary *) param success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
+
++ (BOOL)getResponseCode:(NSDictionary*)data;
+
++(AFHTTPRequestOperationManager * ) get:(NSString *) url
+                                  param:(NSDictionary *) param
+                                   type:(int)requestType
+                                success:(void (^)(id responseObject))success
+                                failure:(void (^)(NSError *error))failure;
+
++(AFHTTPRequestOperationManager * ) get:(NSString *) url
+                                  param:(NSDictionary *) param
+                                success:(void (^)(id responseObject))success
+                                failure:(void (^)(NSError *error))failure;
+
++(AFHTTPRequestOperationManager * ) post:(NSString *) url
+                                   param:(NSDictionary *) param
+                                    type:(int)requestType
+                                 success:(void (^)(id responseObject))success
+                                 failure:(void (^)(NSError *error))failure;
+
+
+
 @end

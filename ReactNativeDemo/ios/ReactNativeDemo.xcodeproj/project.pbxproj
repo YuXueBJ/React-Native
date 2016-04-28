@@ -44,6 +44,7 @@
 		A1E8B1121CC9C90400D61AFD /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E8B0FF1CC9C90400D61AFD /* UIRefreshControl+AFNetworking.m */; };
 		A1E8B1131CC9C90400D61AFD /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E8B1011CC9C90400D61AFD /* UIWebView+AFNetworking.m */; };
 		A1E8B1211CC9D8AD00D61AFD /* XSYCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E8B1201CC9D8AD00D61AFD /* XSYCacheManager.m */; };
+		A1E8B12E1CCA307D00D61AFD /* XSYRequestBease.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E8B12D1CCA307D00D61AFD /* XSYRequestBease.m */; };
 		A1F6DB041CAE21320075A724 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6DB031CAE21320075A724 /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
@@ -195,6 +196,8 @@
 		A1E8B1011CC9C90400D61AFD /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		A1E8B11F1CC9D8AD00D61AFD /* XSYCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSYCacheManager.h; sourceTree = "<group>"; };
 		A1E8B1201CC9D8AD00D61AFD /* XSYCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSYCacheManager.m; sourceTree = "<group>"; };
+		A1E8B12C1CCA307D00D61AFD /* XSYRequestBease.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSYRequestBease.h; sourceTree = "<group>"; };
+		A1E8B12D1CCA307D00D61AFD /* XSYRequestBease.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSYRequestBease.m; sourceTree = "<group>"; };
 		A1F6DB021CAE21320075A724 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		A1F6DB031CAE21320075A724 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -393,6 +396,8 @@
 		A1E8B0BE1CC9C8C700D61AFD /* XSYRequestTool */ = {
 			isa = PBXGroup;
 			children = (
+				A1E8B12C1CCA307D00D61AFD /* XSYRequestBease.h */,
+				A1E8B12D1CCA307D00D61AFD /* XSYRequestBease.m */,
 				A1E8B0BF1CC9C8C700D61AFD /* XSYRequestTool.h */,
 				A1E8B0C01CC9C8C700D61AFD /* XSYRequestTool.m */,
 				A1E8B0C11CC9C8C700D61AFD /* XSYRequest.h */,
@@ -734,6 +739,7 @@
 				A1E8B1211CC9D8AD00D61AFD /* XSYCacheManager.m in Sources */,
 				A1E8B1031CC9C90400D61AFD /* AFHTTPRequestOperation.m in Sources */,
 				A1E8B10B1CC9C90400D61AFD /* AFURLSessionManager.m in Sources */,
+				A1E8B12E1CCA307D00D61AFD /* XSYRequestBease.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				A19647451C9FC94400818A42 /* CalendarManager.m in Sources */,
 				A1E8B1051CC9C90400D61AFD /* AFHTTPSessionManager.m in Sources */,

@@ -48,8 +48,8 @@ export default class Counter extends Component {
   
   render() {
     const { data } = this.props;
+    debugger
     return (
-      
       <View style={styles.rowView}>
        { 
         /*{
@@ -67,7 +67,7 @@ export default class Counter extends Component {
              return <Text style={styles.rowTitlestyle}>{`${data[key]}`}</Text>;
            }
           //  return  <Text style={styles.rowstyle} key={data.id}>{`${key}:${data[key]}`}</Text>;
-           return <Text style={styles.rowstyle}>{`${key}:${data[key]}`}</Text>;
+             return   <Text style={styles.rowstyle}>{`${key}:${data[key]}`}</Text>;
          })
        }
       </View>

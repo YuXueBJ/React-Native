@@ -17,6 +17,7 @@ class ListViewApp extends Component {
     return (
       <RefreshListView
         data={state.dataSource}
+        isLoadMore = {state.isLoadMore}
         customRow= {state.customRow}
         error = {state.error}
         {...actions} />

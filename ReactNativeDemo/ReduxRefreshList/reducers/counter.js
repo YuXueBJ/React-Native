@@ -3,37 +3,43 @@
 */
 
 import * as types from '../actions/actionTypes';
-import * as dataArray from './insetDataSource';
 
  const insertState = {
-    dataSource: dataArray.insertData,
+    dataSource: [],
     isCustomRow:true,
     customRow:null,
+    isLoadMore:false,
 };
 let insertAction = {
 
 };
 
 export default function counter(
-state = insertState, action = insertAction) {
+ state = insertState, action = insertAction) {
   switch (action.type) {
     case types.REOAD_LIST:{
        return{
-          ...state,
-          dataSource:state.dataSource,
+            ...state,
+           dataSource:state.dataSource,
+           isLoadMore:action.isLoadMore,
+         
       };
     }
     case types.START_REFRESH_ACTION:{
         return{
-            ...state,
+           ...state,
             dataSource:action.data,
             customRow:action.customRow,
+            isLoadMore:action.isLoadMore,
+             
         };
     }
       case types.LOAD_MORE_ACTION:{
         return{
-            ...state,
+             ...state,
             dataSource:state.dataSource.concat(action.data),
+            isLoadMore:action.isLoadMore,
+          
         };
     }
     case types.REFRESH_ERROR_ACTION:{
@@ -41,6 +47,7 @@ state = insertState, action = insertAction) {
             ...state,
             dataSource:null,
             error:action.error,
+            isLoadMore:action.isLoadMore,
         };
     }
     default:

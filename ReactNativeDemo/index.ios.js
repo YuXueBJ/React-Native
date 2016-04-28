@@ -11,9 +11,11 @@ import React, { AppRegistry } from 'react-native';
 // import ListViewModule from './LearnDemo/TableView/customListView';
 // AppRegistry.registerComponent('ReactNativeDemo', () => ListViewModule);
 
-// import ReduxTodoList from './ReduxRefreshList/containers/app';
 // import ReduxCustomCell from './ReduxCustomCell/containers/app';
-// AppRegistry.registerComponent('ReactNativeDemo', () => ReduxTodoList);
+// AppRegistry.registerComponent('ReactNativeDemo', () => ReduxCustomCell);
 
-import Fetch from './XSYRequest';
-AppRegistry.registerComponent('ReactNativeDemo', () => Fetch);
+import ReduxTodoList from './ReduxRefreshList';
+AppRegistry.registerComponent('ReactNativeDemo', () => ReduxTodoList);
+
+// import Fetch from './XSYRequest';
+// AppRegistry.registerComponent('ReactNativeDemo', () => Fetch);

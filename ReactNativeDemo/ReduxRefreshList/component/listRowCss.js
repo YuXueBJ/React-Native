@@ -12,10 +12,16 @@ var styles = {
   container: {
     flex: 1,
     backgroundColor: '#FFF',
-    height:contHeight,
+    // height:contHeight,
   },
   row: {
     height: height / 10,
+    width : width,
+    borderBottomColor: 'red',
+    borderBottomWidth: 1,
+  },
+  rowView: {
+    height: 20,
     width : width,
     borderBottomColor: 'red',
     borderBottomWidth: 1,
@@ -29,12 +35,10 @@ var styles = {
       fontWeight:'bold',
   },
   desFont:{
-      marginTop:10,
       height:20,
       marginLeft:15,
       color:'#3B3B3B',
-      fontSize:10,
-      fontWeight:'bold',
+      fontSize:12,
   },
   rowLine:{
       marginBottom:0,
