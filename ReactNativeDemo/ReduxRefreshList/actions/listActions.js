@@ -93,7 +93,7 @@ export function refreshAction(id){
       if(json.scode=="0"){
           let moreData =  customizeEnment(json);
           console.log(`解析：${moreData}`); 
-          let ismore = moreData.length>19?true:false;
+          let ismore = moreData.length>19;
           console.log(ismore); 
           dispatch(loadMore(moreData,ismore))
       }else{

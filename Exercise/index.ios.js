@@ -50,6 +50,8 @@ import React, {
 //   },
 // });
 
-import ReduxTodoList from './app/components/RefreshListView';
+import app from './app/components/appNavigator';
 
-AppRegistry.registerComponent('Exercise', () => ReduxTodoList);
+// import ReduxTodoList from './app/components/RefreshListView';
+
+AppRegistry.registerComponent('Exercise', () => app);

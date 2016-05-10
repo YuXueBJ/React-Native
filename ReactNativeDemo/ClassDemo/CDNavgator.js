@@ -10,6 +10,8 @@ var {
   TouchableOpacity
 } = React;
 
+import * as pageTypes from './CDActonStype';
+
 var CDLaunchScreen = require('./CDLaunchScreen');
 var CDLoginPage    = require('./CDLoginPage');
 var CDMainPage     = require('./CDMainPage');
@@ -20,6 +22,8 @@ var PickViewPage   = require('../LearnDemo/PickerView');
 var RefreshableListview = require ('../LearnDemo/TableView/refreshableListview');
 var ButtonView   = require('../LearnDemo/CDButton');
 var TabbarView   = require('../LearnDemo/TabBar/CDTabbarView');
+
+import ReduxTodoList from '../ReduxRefreshList';
 
 
  var a = 2;
@@ -34,7 +38,7 @@ class demoAPP extends Component {
   render(){
     return (
       <Navigator 
-            initialRoute = {{id:'CDLaunchScreen',name:'Index'}}
+            initialRoute = {{id:pageTypes.LAUNCH_SCREEN_PAGE,name:'Index'}}
             renderScene = {this.renderScene.bind(this)}
             configureScene = {(route)=>{
                 if(route.sceneConfig){
@@ -48,60 +52,68 @@ class demoAPP extends Component {
     
     renderScene(route, navigator) {
     var routeId = route.id;
-    if (routeId === 'CDLaunchScreen') {
+    if (routeId === pageTypes.LAUNCH_SCREEN_PAGE) {
       return (
         <CDLaunchScreen
           navigator={navigator} />
       );
     }
-    if (routeId === 'CDLoginPage') {//列表
+    if (routeId === pageTypes.HOME_PAGE) {//列表
       return (
         <CDLoginPage
           navigator={navigator} />
       );
     }
-    if (routeId === 'HomePage') {//弹框
+    if (routeId === pageTypes.ALERT_PAGE) {//弹框
       return (
         <CDMainPage
             navigator={navigator} />
       );
     }
-    if(routeId === 'RowViewPage')//表格
+    if(routeId === pageTypes.LIST_VIEW_PAGE)//表格
     {
        return (
         <RowViewPage
             navigator={navigator} />
       );
     }
-    if (routeId === 'RefreshableTableView') { //表格下拉
+    if (routeId === pageTypes.REFRESH_LIST_VIEW_PAGE) { //表格下拉
       return (
         <RefreshableListview
           navigator={navigator} />
       );
     }
-    if (routeId === 'NoNavigatorPage') {//地图
+    if (routeId === pageTypes.MAP_PAGE_VIEW_PAGE) {//地图
       return (
         <NoNavigatorPage
             navigator={navigator} />
       );
     }
-    if(routeId == 'pickerViewPage'){//pickerView
+    if(routeId == pageTypes.PCIK_VIEW_PAGE){//pickerView
         return (
           <PickViewPage
           navigator = {navigator}/>  
         );
-    } if(routeId == 'ButtonView'){//Button
+    } if(routeId == pageTypes.BUTTON_VIEW_PAGE){//Button
         return (
           <ButtonView
           navigator = {navigator}/>  
         );
-    }if(routeId == 'TabbarViewPage')//TabbarView
+    }if(routeId == pageTypes.TABBAR_VIEW_PAGE)//TabbarView
     {
         return (
           <TabbarView
           navigator = {navigator}/>  
         );
     }
+    if(routeId == pageTypes.CUSTOM_LIST_VIEW_PAGE)//自定义表格
+    {
+        return (
+          <ReduxTodoList
+          navigator = {navigator}/>  
+        );
+    }
+    
     return this.noRoute(navigator);
 
   }

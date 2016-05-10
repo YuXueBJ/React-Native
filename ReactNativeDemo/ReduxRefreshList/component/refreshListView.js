@@ -9,6 +9,7 @@ import React, {
     ListView,
     Dimensions,
     TouchableOpacity,
+    PropTypes,
     View
 } from 'react-native';
 
@@ -18,7 +19,8 @@ import  ListRowView from './listRow';
 import  ListEmptyView from './listEmptyView';
 import  ListError from './listError'
 
-var listView = React.createClass({
+var CustomListView = React.createClass({
+  
   //List Cell View
   renderRow(row) {
     return (
@@ -35,17 +37,22 @@ var listView = React.createClass({
            refreshAction,
            loadMoreAction,
       } = this.props;
-    //加载错误页面
-    if(error){
+      
+    let isErrorView = this.props.disableErrorView;
+    if(error&&isErrorView){
+       //加载错误页面
       return (
          <ListError refresh={refreshAction} />
+      )
+    }
+     let isEmptyView = this.props.disableErrorView;
+     if(isEmptyView){
+        //加载为空页面
+      if(data == undefined||data.length==0){
+        return (
+              <ListEmptyView refresh={refreshAction} />
       )}
-      
-    //加载为空页面
-     if(data == undefined||data.length==0){
-      return (
-             <ListEmptyView refresh={refreshAction} />
-     )}
+    }
      
     //数据属性格式
    let ListViewDataSource = new ListView.DataSource({
@@ -80,4 +87,20 @@ var styles = {
   },
 };
 
-module.exports = listView;
+CustomListView.propTypes={
+  /**
+	 * 是否禁用表格错误页面
+	 */
+  disableErrorView:React.PropTypes.bool,
+  /**
+	 * 是否禁用表格空页面
+	 */
+  disableEmptyView:React.PropTypes.bool,
+}
+
+CustomListView.defaultProps = {
+	disableErrorView: true,
+	disableEmptyView: false
+};
+
+module.exports = CustomListView;

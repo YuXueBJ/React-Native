@@ -10,6 +10,8 @@ var {
   TouchableHighlight,
   TouchableOpacity,
 } = React;
+import * as pageTypes from './CDActonStype';
+
 
 class HomePage extends Component {
   render() {

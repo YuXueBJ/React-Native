@@ -1,3 +1,10 @@
 {
     "typescript.tsdk": "/Users/zhw/.vscode/node_modules/typescript/lib"
+    
+    // 控制字体大小。
+	"editor.fontSize": 16,
+    
+    "editor.lineHeight": 25,
+    
+    
 }

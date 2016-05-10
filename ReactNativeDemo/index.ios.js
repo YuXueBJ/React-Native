@@ -5,8 +5,8 @@
 'use strict';
 import React, { AppRegistry } from 'react-native';
 
-// import ListViewModule from './ClassDemo/CDNavgator';
-// AppRegistry.registerComponent('ReactNativeDemo', () => ListViewModule);
+import ListViewModule from './example';
+AppRegistry.registerComponent('ReactNativeDemo', () => ListViewModule);
 
 // import ListViewModule from './LearnDemo/TableView/customListView';
 // AppRegistry.registerComponent('ReactNativeDemo', () => ListViewModule);
@@ -14,8 +14,8 @@ import React, { AppRegistry } from 'react-native';
 // import ReduxCustomCell from './ReduxCustomCell/containers/app';
 // AppRegistry.registerComponent('ReactNativeDemo', () => ReduxCustomCell);
 
-import ReduxTodoList from './ReduxRefreshList';
-AppRegistry.registerComponent('ReactNativeDemo', () => ReduxTodoList);
+// import ReduxTodoList from './ReduxRefreshList';
+// AppRegistry.registerComponent('ReactNativeDemo', () => ReduxTodoList);
 
 // import Fetch from './XSYRequest';
 // AppRegistry.registerComponent('ReactNativeDemo', () => Fetch);

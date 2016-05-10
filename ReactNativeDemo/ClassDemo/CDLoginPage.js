@@ -13,20 +13,50 @@ var {
   Dimensions,
   ListView,
 } = React;
+import * as pageTypes from './CDActonStype';
 
 var styles = require('./LoginPageCss');
 /**
  * 表格数据初始化
 */
 var data = [
- {id: 1, text: '布局',         des: 'view布局视图'},
- {id: 2, text: '弹框',         des: 'AlertView'},
- {id: 3, text: '表格',         des: 'ListView'},
- {id: 4, text: '表格刷新',      des: 'ListView下啦'},
- {id: 5, text: '调用原生地图',   des: '原生'},
- {id: 7, text: '按钮',          des: 'Button'},
- {id: 6, text: 'Picker',       des: '可以在iOS和Android上渲染原生的选择器（Picker）'},
- {id: 8, text: 'Tabbar',       des: 'Tabbar'},
+ { id: 1, text: '布局',
+   des: 'view布局视图 ',
+   pageype:pageTypes.LIST_VIEW_PAGE,
+ },
+ {id: 2, text: '弹框',
+  des: 'AlertView',
+  pageype:pageTypes.ALERT_PAGE,
+ },
+ { id: 3, text: '表格',
+  des: 'ListView',
+  pageype:pageTypes.LIST_VIEW_PAGE,
+},
+ {id: 4, text: '表格刷新',
+ des: 'ListView下啦',
+ pageype:pageTypes.REFRESH_LIST_VIEW_PAGE,
+},
+ {id: 5, text: '调用原生地图',
+ des: '原生',
+ pageype:pageTypes.MAP_PAGE_VIEW_PAGE,
+},
+ {id: 6, text: '按钮',
+ des: 'Button',
+ pageype:pageTypes.BUTTON_VIEW_PAGE,
+},
+ {id: 7, text: 'Picker',
+  des: '可以在iOS和Android上渲染原生的选择器（Picker）',
+  pageype:pageTypes.PCIK_VIEW_PAGE,
+},
+ {id: 8, text: 'Tabbar',
+ des: 'Tabbar',
+ pageype:pageTypes.TABBAR_VIEW_PAGE,
+},
+ {id: 9, text: '自定义列表',
+ des: 'CustomTableview',
+ pageype:pageTypes.CUSTOM_LIST_VIEW_PAGE,
+},
+
 ];
 
 
@@ -88,31 +118,13 @@ var LoginPage = React.createClass({
  * 首页页面跳转
  */ 
 function gotoNext(sender,rowData) {
-    
-       if (rowData.id==1) {
-           navPuspage(sender,'RowViewPage','布局');
-       }else if(rowData.text=='Picker'){
-           navPuspage(sender,'pickerViewPage','picker');
-       }else if(rowData.text == '表格刷新'){
-           navPuspage(sender,'RefreshableTableView','下拉表格')
-       }else if(rowData.text == '按钮'){
-             navPuspage(sender,'ButtonView','按钮')
-       }else if(rowData.text = 'Tabbar'){
-            navPuspage(sender,'TabbarViewPage','TabBar')
-       }
-       else{
-           navPuspage(sender,'HomePage','主页');
-       }
-} 
-
-function navPuspage(sender,pageID,pageName) {
-         sender.push({
-             id: pageID,
-             name: pageName,          
-              //页面弹起
-             //    sceneConfig: Navigator.SceneConfigs.FloatFromBottom,
+    let name =  rowData.pageype;
+    let des =  rowData.des;
+    sender.push({
+             id: name,
+             name: des,          
         });   
-}
+} 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**
  * 导航条

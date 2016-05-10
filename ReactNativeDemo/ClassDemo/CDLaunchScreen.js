@@ -1,5 +1,7 @@
 'use strict';
 
+import * as pageTypes from './CDActonStype';
+
 var React = require('react-native');
 var {
   Component,
@@ -12,7 +14,7 @@ class launchScreen extends Component {
     var navigator = this.props.navigator;
     setTimeout(() => {
       navigator.replace({
-        id: 'CDLoginPage',
+        id: pageTypes.HOME_PAGE,
       });
     }, 1000);
   }

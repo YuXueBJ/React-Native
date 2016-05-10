@@ -49,7 +49,6 @@ export default class customListRowView extends React.Component{
                data
             }
              <View style={styles.rowLine} >
-                <Text>{1}</Text>
              </View>
            </View>
         );
